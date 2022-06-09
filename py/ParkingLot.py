@@ -7,10 +7,10 @@ class ParkingLot:
         pass
 
     def AddCar():
-        print()
+        return
     def GetAvailableSpaces():
-        print()
+        return
     def GetUsedSpaces():
-        print()
+        return
     def RemoveCar():
-        print()
+        return
