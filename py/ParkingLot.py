@@ -1,10 +1,12 @@
 class ParkingLot:
-    __totalspaces
-    __availableSpaces
-    __usedSpaces
+    __totalspaces = None
+    __availableSpaces = None
+    __usedSpaces = None
 
-    def __init__(self):
-        pass
+    def __init__(self, totalSpaces, availableSpaces, usedSpaces):
+        self.__totalspaces = totalSpaces
+        self.__availableSpaces = availableSpaces
+        self.__usedSpaces = usedSpaces
 
     def AddCar():
         return

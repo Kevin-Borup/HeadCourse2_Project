@@ -1,4 +1,5 @@
 class ProcessManagement:
-    __parkinglots
-    def __init__(self):
-        pass
+    __parkinglots = None
+
+    def __init__(self, parkinglots):
+        self.__parkinglots = parkinglots
