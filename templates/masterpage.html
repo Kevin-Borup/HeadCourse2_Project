@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="StyleSheet" type="text/css" href="static/css/nav.css">
+        <link rel="StyleSheet" type="text/css" href="static/css/banner.css">
+
+        <title>{{ title }}</title>
+    </head>
+    <body>
+        <img id="bannerImg" src="static/img/zbc_black.jpg"/>
+
+        <div class="nav">
+            <!-- Home -->
+            <a href="/">Home</a>
+            <!-- Parking Lot Map -->
+            <a href="{{ url_for('parkingLotMap') }}">Parking Lot</a>
+            <!-- Profile -->
+            <a href="{{ url_for('profile') }}">Profile</a>
+            <!-- LogIn/Register -->
+            <a href="{{ url_for('loginRegister') }}">Login/Register</a>
+        </div>
+
+        <div class="body">
+            {% block content %}{% endblock %}
+        </div>
+
+        <hr>
+
+        <footer>
+            <h1>ZBC Parking lot &copy;</h1>
+        </footer>
+        {% block scripts %}{% endblock %}
+    </body>
+</html>
