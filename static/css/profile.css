@@ -1,4 +1,4 @@
-
+/* Sorry if some of this will break something, if you want to specify use # and then an id. */
 .column {
     float: left;
     padding: 15px;
@@ -9,7 +9,7 @@
     clear: both;
     display: table;
 }
-
+/* this is a list thingy */
 .menu ul {
     list-style-type: none;
     margin: 0;
