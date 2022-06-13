@@ -1,22 +1,12 @@
-from flask import Flask, render_template, redirect, request, url_for
+from flask import Flask, render_template
+from static.py.dbConfig import config
 import psycopg2
 
 app = Flask(__name__)
 
-conn = psycopg2.connect("dbname=postgres user=postgres password=Kode1234!")
-
-cur = conn.cursor()
-
-cur.execute('SELECT name FROM public.ducks WHERE id = 69')
-
-testData = cur.fetchone()
-
-cur.close()
-conn.close()
-
 @app.route('/')
 def home():
-        return render_template('FrontPage.html', title="Home", data=testData)
+        return render_template('FrontPage.html', title="Home", data=getTestName())
 
 @app.route('/ParkingLotMap')
 def parkingLotMap():
@@ -30,4 +20,19 @@ def profile():
 def loginRegister():
     return render_template('LoginRegister.html', title="LoginRegister")
 
+def getTestName():
+        try:
+                params = config()
+                conn = psycopg2.connect(**params)
+                cur = conn.cursor()
+                cur.execute('SELECT name FROM public.ducks WHERE id = 69')
+                testData = cur.fetchone() # Fetches a single row from the database
+                cur.close()
 
+        except (Exception, psycopg2.DatabaseError) as error:
+                print(error)
+
+        finally:
+                if conn is not None:
+                        conn.close()
+                return testData
