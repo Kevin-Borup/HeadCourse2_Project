@@ -21,11 +21,13 @@ def loginRegister():
     return render_template('LoginRegister.html', title="LoginRegister")
 
 def getTestName():
+        conn = None
+        testData = None
         try:
                 params = config()
                 conn = psycopg2.connect(**params)
                 cur = conn.cursor()
-                cur.execute('SELECT name FROM public.ducks WHERE id = 69')
+                cur.execute('SELECT name FROM public.user_account WHERE id = 1')
                 testData = cur.fetchone() # Fetches a single row from the database
                 cur.close()
 
