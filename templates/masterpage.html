@@ -14,13 +14,14 @@
 
         <div class="nav">
             <!-- Home -->
-            <a href="/">Home</a>
+            <div class="boxes"><a href="/">Home</a></div>
             <!-- Parking Lot Map -->
-            <a href="{{ url_for('parkingLotMap') }}">Parking Lot</a>
+            <div class="boxes"><a href="{{ url_for('parkingLotMap') }}">Parking Lot</a> </div>
             <!-- Profile -->
-            <a href="{{ url_for('profile') }}">Profile</a>
+            <div class="boxes"><a href="{{ url_for('profile') }}">Profile</a> </div>
             <!-- LogIn/Register -->
-            <a href="{{ url_for('loginRegister') }}">Login/Register</a>
+            <div class="boxes"><a href="{{ url_for('loginRegister') }}">Login/Register</a> </div>
+        
         </div>
 
         <div class="body">
