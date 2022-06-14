@@ -4,6 +4,9 @@ ArduinoSerial = serial.Serial('COM3', 9600, timeout=0.1)
 
 gateDegrees = ""
 
+# Gate Closed = 0 degrees
+# Gate Open = 70 degrees
+
 keepRunning = True
 while(keepRunning):
     userInput = input("Enter gate degrees or 'end': ")
@@ -12,7 +15,8 @@ while(keepRunning):
         break
 
     result = '{0}'.format(userInput)
-    print(result.encode('utf-8'))
+    # print(result.encode('utf-8'))
     ArduinoSerial.write(result.encode('utf-8'))
-    print(ArduinoSerial.read())
+    # print(ArduinoSerial.read())
+
 
