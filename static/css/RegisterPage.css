@@ -4,14 +4,10 @@
     box-sizing: border-box;
 }
 
-body{
-    display:flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .container{
+    display: block;
     position: relative;
+    left: 35%;
     max-width: 430px;
     width: 100%;
     background: #fff;
@@ -30,30 +26,17 @@ body{
 
 
 .container .form{
-    width: 50%;
+    width: 100%;
     padding: 30px;
     background-color: #fff;
     transition: margin-left 0.18s ease;
 }
 
-.container.active .login{
-    margin-left: -50%;
-    opacity: 0;
-    transition: margin-left 0.18s ease, opacity 0.15s ease;
-}
-
 .container .signup{
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.09s ease;
 }
-.container.active .signup{
-    opacity: 1;
-    transition: opacity 0.2s ease;
-}
 
-.container.active .forms{
-    height: auto;
-}
 .container .form .title{
     position: relative;
     font-size: 27px;

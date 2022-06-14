@@ -1,6 +1,5 @@
 from flask import Flask, render_template
 from static.py.dbConfig import config
-from static.py.
 import psycopg2
 
 app = Flask(__name__)
@@ -17,9 +16,13 @@ def parkingLotMap():
 def profile():
     return render_template('Profile.html', title="Profile")
 
-@app.route('/LoginRegister')
-def loginRegister():
-    return render_template('LoginRegister.html', title="LoginRegister")
+@app.route('/Login')
+def login():
+    return render_template('LoginPage.html', title="Login")
+
+@app.route('/Register')
+def register():
+    return render_template('RegisterPage.html', title="Register")
 
 def getTestName():
         conn = None

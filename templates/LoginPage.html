@@ -1,0 +1,29 @@
+{% extends "masterpage.html" %}
+{% block content %}
+
+<link rel="StyleSheet" type="text/css" href="static/css/LoginPage.css">
+
+<!-- Login Form -->
+<div class="container">
+    <div class="forms">
+        <div class="form login">
+            <span class="title">Login</span>
+
+            <form action="#">
+                <div class="input-field">
+                    <input type="text" placeholder="Enter your email" required>
+                </div>
+                <div class="input-field">
+                    <input type="password" class="password" placeholder="Enter your password" required>
+                </div>
+
+                <div class="input-field button">
+                    <input type="button" value="Login">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% block scripts %}{% endblock %}
+{% endblock %}

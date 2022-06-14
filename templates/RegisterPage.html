@@ -1,0 +1,50 @@
+{% extends "masterpage.html" %}
+{% block content %}
+
+<link rel="StyleSheet" type="text/css" href="static/css/RegisterPage.css">
+
+<!-- Registration Form -->
+<div class="container">
+    <div class="form signup">
+        <span class="title">Registration</span>
+
+        <form action="#">
+            <div class="input-field">
+                <input type="text" placeholder="Enter your first name" required>
+            </div>
+            <div class="input-field">
+                <input type="text" placeholder="Enter your last name" required>
+            </div>
+            <div class="input-field">
+                <input type="email" placeholder="Enter your email" required>
+            </div>
+            <div class="input-field">
+                <input type="text" placeholder="Enter your license plate" required>
+            </div>
+            <div class="input-field">
+                <input type="password" class="password" placeholder="Create a password" required>
+            </div>
+            <div class="input-field">
+                <input type="password" class="password" placeholder="Confirm a password" required>
+            </div>
+            <div class="input-field">
+                <input type="text" placeholder="Enter a cardnumber" required>
+            </div>
+            <div class="input-field">
+                <input type="text" placeholder="Enter cardholder's name" required>
+            </div>
+            <div class="input-field">
+                <input type="text" placeholder="Enter CVC" required>
+            </div>
+            <div class="input-field">
+                <input type="month" placeholder="Enter expiration date" required>
+            </div>
+            <div class="input-field button">
+                <input type="button" value="Register">
+            </div>
+        </form>
+    </div>
+</div>
+
+{% block scripts %}{% endblock %}
+{% endblock %}
