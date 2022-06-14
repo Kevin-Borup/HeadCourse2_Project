@@ -1,0 +1,10 @@
+#box_test {
+  font-size: 125%;
+  float: left;
+  border: 1.5% black;
+  outline-style: solid;
+  width: 30%;
+  padding: 2%;
+  margin: 4.5%;
+}
+

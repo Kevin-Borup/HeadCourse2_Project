@@ -3,7 +3,10 @@
     <head>
         <link rel="StyleSheet" type="text/css" href="static/css/nav.css">
         <link rel="StyleSheet" type="text/css" href="static/css/banner.css">
-
+        <link rel="StyleSheet" type="text/css" href="static/css/FrontPage.css">
+        <link rel="StyleSheet" type="text/css" href="static/css/LogReg.css">
+        <link rel="StyleSheet" type="text/css" href="static/css/profile.css"
+> 
         <title>{{ title }}</title>
     </head>
     <body>
@@ -24,11 +27,11 @@
             {% block content %}{% endblock %}
         </div>
 
-        <hr>
-
-        <footer>
-            <h1>ZBC Parking Lot &copy;</h1>
-        </footer>
+                                          
+        <div class="footer">
+            <hr>
+            <h2>ZBC Parking Lot &copy;</h2>
+        </div>
         {% block scripts %}{% endblock %}
     </body>
 </html>
