@@ -12,13 +12,10 @@ https://www.w3schools.com/css/default.asp */
     margin: 3.2%;
 }
 
-.p {
-    font-size: 120%;
-}
 
 /* Colors for avaible and not avaible places */
 
-.avaible{
+.available{
     color: green ;
 }
 
