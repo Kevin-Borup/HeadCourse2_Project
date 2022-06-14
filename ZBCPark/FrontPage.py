@@ -1,28 +1,12 @@
-from flask import Flask, render_template
-from static.py.dbConfig import config
-import psycopg2
+from flask import (
+    Blueprint, flash, g, redirect, render_template, request, session, url_for
+)
 
-app = Flask(__name__)
+bp = Blueprint('frontPage', __name__)
 
 @app.route('/')
 def home():
         return render_template('FrontPage.html', title="Home", data=getTestName())
-
-@app.route('/ParkingLotMap')
-def parkingLotMap():
-        return render_template('ParkingLotMap.html', title="Parking Lot")
-
-@app.route('/Profile')
-def profile():
-    return render_template('Profile.html', title="Profile")
-
-@app.route('/Login')
-def login():
-    return render_template('LoginPage.html', title="Login")
-
-@app.route('/Register')
-def register():
-    return render_template('RegisterPage.html', title="Register")
 
 def getTestName():
         conn = None
