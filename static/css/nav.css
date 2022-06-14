@@ -1,13 +1,21 @@
 
 .nav {
-    height: 30px;
-
+    height: 40px;
     border-top: 2px;
     border-bottom: 2px;
     border-right: 0;
     border-left: 0;
     border-style: solid;
     border-color: grey;
+}
+
+
+.boxes{
+    float: left;
+    border: 0.1% black;
+    outline-style: solid;
+    width: 9%;
+    margin: 0.5%;
 }
 
 .footer {
