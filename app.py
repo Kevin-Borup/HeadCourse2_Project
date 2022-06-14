@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from static.py.dbConfig import config
+from static.py.
 import psycopg2
 
 app = Flask(__name__)
@@ -27,7 +28,7 @@ def getTestName():
                 params = config()
                 conn = psycopg2.connect(**params)
                 cur = conn.cursor()
-                cur.execute('SELECT name FROM public.user_account WHERE id = 1')
+                cur.execute('SELECT * FROM public.user_account WHERE id = 1')
                 testData = cur.fetchone() # Fetches a single row from the database
                 cur.close()
 
