@@ -3,8 +3,8 @@ from winreg import REG_LEGAL_OPTION
 import numpy as np
 import cv2
 from PIL import Image
+from tkinter import filedialog
 import pytesseract as tess
-
 
 # Check the area range and width-height ratio
 def RatioCheck(area, width, height):
@@ -12,7 +12,7 @@ def RatioCheck(area, width, height):
 
     if  ratio < 1:
         ratio = 1 / ratio
-    if (area < 1063.62 or area > 73862.5) or (ratio < 3 or ratio > 6):
+    if (area < 1063.62 or area > 1000000) or (ratio < 3 or ratio > 6):
         return False
     return True
 
@@ -50,8 +50,6 @@ def CleanPlate(plate):
 
     _, thresh = cv2.threshold(gray_img, 110, 255, cv2.THRESH_BINARY)
 
-    if cv2.waitKey(0) & 0xff == ord('q'):
-        pass
     num_contours, hierarchy = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
 
     if num_contours:
@@ -67,13 +65,15 @@ def CleanPlate(plate):
     else:
         return plate, None
 
-img = cv2.imread("LatestLicensePlate.png")
+file_path=filedialog.askopenfilename()
+img=cv2.imread(file_path)
+#img = cv2.imread("LicensePlateScooter.png")
 
 print("Number  input image...",)
 cv2.imshow("input",img)
 
-if cv2.waitKey(0) & 0xff == ord('q'):
-    pass
+# if cv2.waitKey(0) & 0xff == ord('q'):
+#     pass
 
 img2 = cv2.GaussianBlur(img, (3,3), 0)
 
@@ -99,16 +99,18 @@ for i,cnt in enumerate(num_contours):
         x,y,w,h = cv2.boundingRect(cnt)
         plate_img = img[y:y+h,x:x+w]
         print("Number  identified number plate...")
-        cv2.imshow("num plate image",plate_img)
-        if cv2.waitKey(0) & 0xff == ord('q'):
-            pass
+        # cv2.imshow("num plate image",plate_img)
+        print("Is max white:", IsMaxWhite(plate_img))
         if(IsMaxWhite(plate_img)):
             clean_plate, rect = CleanPlate(plate_img)
+            print("Is rect:", rect)
             if rect:
                 fg=0
                 x1,y1,w1,h1 = rect
                 x,y,w,h = x+x1,y+y1,w1,h1
-                # cv2.imwrite("clena.png",clean_plate)
+                cv2.imwrite("Arduino\Pictures\cleanLicense.png",clean_plate)
                 plate_im = Image.fromarray(clean_plate)
                 text = tess.image_to_string(plate_im, lang='eng')
                 print("Number  Detected Plate Text : ",text)
+
+                
