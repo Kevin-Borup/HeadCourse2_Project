@@ -1,9 +1,31 @@
 #boxedmy {
     font-size: 100%;
-    float: none;
+    float: right;
+    width: auto;
+    height: auto;
+    padding: 2%;
+    margin: 1%;
     border: 1% black;
     outline-style: solid;
-    width: 93.5%;
-    padding: 2%;
-    margin: 3.2%;
 }
+
+#boxedmy2 {
+    float: left;
+    padding: 0.25%;
+    margin: 0.225%;
+    width: 49.5%;
+    height: auto; 
+    border: 100% black;
+    outline-style: solid;
+}
+
+img {
+    width: 75%;
+    height: auto;
+  }
+  
+
+
+
+
+
