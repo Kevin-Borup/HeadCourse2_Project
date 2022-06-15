@@ -10,5 +10,5 @@ def TakePicture():
     cam.start()
     time.sleep(1.5)
     img = cam.get_image()
-    pygame.image.save(img,"Arduino\Pictures\LatestLicensePlate.png")
+    pygame.image.save(img,"LatestLicensePlate.png")
     cam.stop()

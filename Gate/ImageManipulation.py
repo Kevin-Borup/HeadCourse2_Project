@@ -5,6 +5,7 @@ import cv2
 from PIL import Image
 from tkinter import filedialog
 import pytesseract as tess
+import DatabaseCommunication
 
 def StartImageProcess():
     img = GetImage()
@@ -37,7 +38,11 @@ def StartImageProcess():
                     cv2.imwrite("cleanLicense.png",clean_plate)
                     plate_im = Image.fromarray(clean_plate)
                     text = tess.image_to_string(plate_im, lang='eng')
+                    licensePlateExists = DatabaseCommunication.CheckLicensePlate(text)
                     print("Number Detected Plate Text: ",text)
+                    return licensePlateExists
+
+                
 
 def GetImage():
     file_path = "LatestLicensePlate.png"
@@ -101,4 +106,4 @@ def CleanPlate(plate):
         final_img = thresh[y:y+h, x:x+w]
         return final_img,[x,y,w,h]
     else:
-        return plate, None     
+        return plate, None 
