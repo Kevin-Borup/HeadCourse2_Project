@@ -1,0 +1,28 @@
+/* The boxes, may change at any time, just be careful not to break anything,
+if you don't know what any of these commands change look in this guide, or experiment. 
+https://www.w3schools.com/css/default.asp */
+
+#box_left {
+    font-size: 125%;
+    float: left;
+    border: 1.5% black;
+    outline-style: solid;
+    width: 22%;
+    padding: 2%;
+    margin: 3.2%;
+}
+
+
+/* Colors for avaible and not avaible places */
+
+.available{
+    color: green ;
+}
+
+.meh{
+    color: orange;
+}
+
+.not_avaible {
+    color: red;
+}
