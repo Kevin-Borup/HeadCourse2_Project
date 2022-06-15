@@ -1,16 +1,55 @@
 {% extends "masterpage.html" %}
 {% block content %}
 
-<div>
-    <!-- Sector 1 -->
-    <div>
-        <h6>Sector 2</h6>
-    </div>
-</div>
+<link rel="StyleSheet" type="text/css" href="static/css/FrontPage.css">
 
-<div>
-    <!-- Test for transfering data from db to html -->
-    <div>
+<div class="flex-container">
+    <!-- Sector 1 -->
+    <div id="box_left">
+        <h3>Sector 1</h3>
+        <p>Available:
+            {% if sector1AS > 60 %}
+            <span class="green">{{sector1AS}}</span>
+            {% elif 30 > sector1AS %}
+            <span class="red">{{sector1AS}}</span>
+            {% else %}
+            <span class="yellow">{{sector1AS}}</span>
+            {% endif %}
+        </p>
+        <p>Used: {{sector1US}}</p>
+        <p>Total: {{sector1Total}}</p>
+    </div>
+
+    <!-- Sector 2 -->
+    <div id="box_left">
+        <h3>Sector 2</h3>
+        <p>Available:
+            {% if sector2AS > 30 %}
+            <span class="green">{{sector2AS}}</span>
+            {% elif 15 > sector2AS %}
+            <span class="red">{{sector2AS}}</span>
+            {% else %}
+            <span class="yellow">{{sector2AS}}</span>
+            {% endif %}
+        </p>
+        <p> Used: {{sector2US}}</p>
+        <p> Total: {{sector2Total}}</p>
+    </div>
+
+    <!-- Sector 3 -->
+    <div id="box_left">
+        <h3>Sector 3</h3>
+        <p>Available:
+            {% if sector3AS > 34 %}
+            <span class="green">{{sector3AS}}</span>
+            {% elif 17 > sector3AS %}
+            <span class="red">{{sector3AS}}</span>
+            {% else %}
+            <span class="yellow">{{sector3AS}}</span>
+            {% endif %}
+        </p>
+        <p> Used: {{sector3US}}</p>
+        <p> Total: {{sector3Total}}</p>
     </div>
 </div>
 

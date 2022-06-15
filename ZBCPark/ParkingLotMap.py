@@ -4,6 +4,10 @@ from flask import (
 
 bp = Blueprint('parkingLotMap', __name__)
 
+
+
 @bp.route('/ParkingLotMap')
 def parkingLotMap():
-        return render_template('ParkingLotMap.html', title="Parking Lot")
+        return render_template(
+                'ParkingLotMap.html',
+                title="Parking Lot")
