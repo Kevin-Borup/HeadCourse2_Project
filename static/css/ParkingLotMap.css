@@ -1,9 +1,9 @@
 #boxedmy {
     font-size: 100%;
-    float: left;
+    float: none;
     border: 1% black;
     outline-style: solid;
-    width: 22%;
+    width: 93.5%;
     padding: 2%;
     margin: 3.2%;
 }
