@@ -11,69 +11,70 @@ class ParkingLot:
         self.__availableSpaces = availableSpaces
         self.__usedSpaces = usedSpaces
 
-    async def UpdateAmountOfParkingSpaces(sectorId, usedSpaces, availableSpaces):
+async def AddCarToParkingLot(sectorId):
 
-        conn = None
+    conn = None
 
-        spaceOverview = None
+    spaceOverview = None
 
-        try:
-                params = await config()
-                conn = await psycopg2.connect(**params)
-                cur = await conn.cursor()
-                await cur.execute('CALL updateparkinglot(%s,%s,%s)', sectorId, usedSpaces, availableSpaces)
-                await cur.execute('SELECT * FROM public.parkinglot WHERE sector = {sectorId}')
-                spaceOverview = await cur.fetchone() # Fetches a single row from the database
-                await cur.close()
+    try:
+        params = await config()
+        conn = await psycopg2.connect(**params)
+        cur = await conn.cursor()
+        await cur.execute('CALL addcartoparkinglot(%s)', sectorId)
+        await cur.execute('SELECT * FROM public.parkinglot WHERE sector = {}'.format(sectorId))
+        spaceOverview = await cur.fetchone() # Fetches a single row from the database
+        await cur.close()
 
-        except (Exception, psycopg2.DatabaseError) as error:
+    except (Exception, psycopg2.DatabaseError) as error:
                 print(error)
 
-        finally:
+    finally:
                 if conn is not None:
                         await conn.close()
                 return spaceOverview
-        
-    async def GetAvailableSpaces(sectorId):
 
-        conn = None
+async def RemoveCarFromParkingLot(sectorId):
 
-        availableSpaces = None
+    conn = None
 
-        try:
-                params = await config()
-                conn = await psycopg2.connect(**params)
-                cur = await conn.cursor()
-                await cur.execute('SELECT availablespaces FROM public.parkinglot WHERE sector = {sectorId}')
-                availableSpaces = await cur.fetchone() # Fetches a single row from the database
-                await cur.close()
+    spaceOverview = None
 
-        except (Exception, psycopg2.DatabaseError) as error:
+    try:
+        params = await config()
+        conn = await psycopg2.connect(**params)
+        cur = await conn.cursor()
+        await cur.execute('CALL removecartoparkinglot(%s)', sectorId)
+        await cur.execute('SELECT * FROM public.parkinglot WHERE sector = {}'.format(sectorId))
+        spaceOverview = await cur.fetchone() # Fetches a single row from the database
+        await cur.close()
+
+    except (Exception, psycopg2.DatabaseError) as error:
                 print(error)
 
-        finally:
+    finally:
                 if conn is not None:
                         await conn.close()
-                return availableSpaces
+                return spaceOverview
+
+def GetSectorsData(sectorId):
         
-    async def GetUsedSpaces():
-        
-        conn = None
+    conn = None
 
-        usedSpaces = None
+    sectorData = None
 
-        try:
-                params = await config()
-                conn = await psycopg2.connect(**params)
-                cur = await conn.cursor()
-                await cur.execute('SELECT usedspaces FROM public.parkinglot WHERE sector = {sectorId}')
-                usedSpaces = await cur.fetchone() # Fetches a single row from the database
-                await cur.close()
+    try:
+        params = config()
+        conn = psycopg2.connect(**params)
+        cur = conn.cursor()
+        cur.execute('SELECT * FROM public.parkinglot WHERE sector = {}'.format(sectorId))
+        sectorData = cur.fetchone() # Fetches a single row from the database
+        cur.close()
 
-        except (Exception, psycopg2.DatabaseError) as error:
-                print(error)
+    except (Exception, psycopg2.DatabaseError) as error:
+        print(error)
 
-        finally:
-                if conn is not None:
-                        await conn.close()
-                return usedSpaces
+    finally:
+        if conn is not None:
+            conn.close()
+        return sectorData
