@@ -1,6 +1,6 @@
 from flask import Flask, render_template
-from static.py.dbConfig import config
 from static.py.ParkingLot import GetSectorsData, AddCarToParkingLot, RemoveCarFromParkingLot
+from static.py.User import GetUserData, AddUser
 app = Flask(__name__)
 
 sector1 = 1
@@ -38,7 +38,19 @@ def parkingLotMap():
 
 @app.route('/Profile')
 def profile():
-    return render_template('Profile.html', title="Profile")
+
+        randomId = 1
+        userData = GetUserData(randomId)
+        (id, name, role, licenseplate, cardnumber) = userData
+
+        return render_template(
+            'Profile.html',
+            title="Profile",
+            userId = id,
+            userName = name,
+            userRole = role,
+            userLicenseplate = licenseplate,
+            userCardnumber = cardnumber)
 
 @app.route('/Login')
 def login():
