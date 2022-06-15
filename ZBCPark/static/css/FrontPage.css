@@ -1,0 +1,30 @@
+/* The boxes, may change at any time, just be careful not to break anything,
+if you don't know what any of these commands change look in this guide, or experiment. 
+https://www.w3schools.com/css/default.asp */
+
+.flex-container {
+    display: flex;
+}
+
+#box_left {
+    font-size: 125%;
+    border: 1.5% black;
+    outline-style: solid;
+    width: 25%;
+    padding: 2%;
+    margin: 3.2%;
+}
+
+/* Colors for avaible and not available places */
+.green {
+    color: green ;
+}
+
+.yellow {
+    color: orange;
+}
+
+.red {
+    color: red;
+}
+
