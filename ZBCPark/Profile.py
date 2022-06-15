@@ -4,7 +4,7 @@ from flask import (
 
 bp = Blueprint('profile', __name__)
 
-@app.route('/Profile')
+@bp.route('/Profile')
 def profile():
     if 'username' in session:
         return render_template('Profile.html', title="Profile")

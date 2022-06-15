@@ -2,11 +2,12 @@ from turtle import title
 from flask import (
     Blueprint, flash, g, redirect, render_template, request, session, url_for
 )
+
 from werkzeug.security import generate_password_hash
 
 bp = Blueprint('register', __name__)
 
-@app.route('/Register')
+@bp.route('/Register')
 def register():
     if request.method == 'POST':
         username = request.form['username']

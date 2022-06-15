@@ -4,6 +4,6 @@ from flask import (
 
 bp = Blueprint('parkingLotMap', __name__)
 
-@app.route('/ParkingLotMap')
+@bp.route('/ParkingLotMap')
 def parkingLotMap():
         return render_template('ParkingLotMap.html', title="Parking Lot")

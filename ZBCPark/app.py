@@ -1,4 +1,5 @@
 from flask import Flask
+import os
 
 def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
@@ -15,21 +16,13 @@ def create_app(test_config=None):
         os.makedirs(app.instance_path)
     except OSError:
         pass
-
     
-    from . import FrontPage
+    import FrontPage, Profile, ParkingLotMap, Login, Register
+
     app.register_blueprint(FrontPage.bp)
-
-    from . import Profile
     app.register_blueprint(Profile.bp)
-
-    from . import ParkingLotMap
     app.register_blueprint(ParkingLotMap.bp)
-
-    from . import Login
     app.register_blueprint(Login.bp)
-
-    from . import Register
     app.register_blueprint(Register.bp)
 
     return app

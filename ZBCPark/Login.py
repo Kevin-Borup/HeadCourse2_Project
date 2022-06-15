@@ -2,9 +2,11 @@ from flask import (
     Blueprint, flash, g, redirect, render_template, request, session, url_for
 )
 
+from werkzeug.security import check_password_hash
+
 bp = Blueprint('login', __name__)
 
-@app.route('/Login', methods=('GET', 'POST'))
+@bp.route('/Login', methods=('GET', 'POST'))
 def login():
     if request.method == 'POST':
         username = request.form['username']

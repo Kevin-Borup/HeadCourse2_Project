@@ -111,4 +111,4 @@ for i,cnt in enumerate(num_contours):
                 # cv2.imwrite("clena.png",clean_plate)
                 plate_im = Image.fromarray(clean_plate)
                 text = tess.image_to_string(plate_im, lang='eng')
-                print("Number  Detected Plate Text : ",text)
+                print("Number Detected Plate Text: ",text)
