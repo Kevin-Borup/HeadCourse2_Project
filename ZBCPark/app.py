@@ -17,13 +17,14 @@ def create_app(test_config=None):
     except OSError:
         pass
     
-    import FrontPage, Profile, ParkingLotMap, Login, Register
+    import HomePage, ProfilePage, ParkingLotPage, LoginPage, RegisterPage, AdministratorPage
 
-    app.register_blueprint(FrontPage.bp)
-    app.register_blueprint(Profile.bp)
-    app.register_blueprint(ParkingLotMap.bp)
-    app.register_blueprint(Login.bp)
-    app.register_blueprint(Register.bp)
+    app.register_blueprint(HomePage.bp)
+    app.register_blueprint(ProfilePage.bp)
+    app.register_blueprint(ParkingLotPage.bp)
+    app.register_blueprint(LoginPage.bp)
+    app.register_blueprint(RegisterPage.bp)
+    app.register_blueprint(AdministratorPage.bp)
 
     return app
 

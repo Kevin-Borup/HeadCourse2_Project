@@ -3,10 +3,10 @@ from flask import (
 )
 from static.py.ParkingLot import AddCarToParkingLot, RemoveCarFromParkingLot
 
-bp = Blueprint('parkingLotMap', __name__)
+bp = Blueprint('parkingLotPage', __name__)
 
-@bp.route('/ParkingLotMap')
-def parkingLotMap():
+@bp.route('/ParkingLot')
+def parkingLotPage():
         return render_template(
-                'ParkingLotMap.html',
+                'ParkingLotPage.html',
                 title="Parking Lot")

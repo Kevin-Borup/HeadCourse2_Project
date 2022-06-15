@@ -7,10 +7,10 @@ from werkzeug.security import generate_password_hash
 
 from static.py.User import AddUser
 
-bp = Blueprint('register', __name__)
+bp = Blueprint('registerPage', __name__)
 
 @bp.route('/Register')
-def register():
+def registerPage():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']

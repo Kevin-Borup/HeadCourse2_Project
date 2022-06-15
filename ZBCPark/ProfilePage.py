@@ -3,10 +3,10 @@ from flask import (
 )
 from static.py.User import GetUserData
 
-bp = Blueprint('profile', __name__)
+bp = Blueprint('profilePage', __name__)
 
 @bp.route('/Profile')
-def profile():
+def profilePage():
     #if 'username' in session:
     #    return render_template('Profile.html', title="Profile")
     #return 'You are not logged in'
@@ -15,7 +15,7 @@ def profile():
     (id, name, role, licenseplate, cardnumber) = userData
 
     return render_template(
-        'Profile.html',
+        'ProfilePage.html',
         title="Profile",
         userId = id,
         userName = name,

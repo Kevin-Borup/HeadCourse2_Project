@@ -4,14 +4,14 @@ from flask import (
 
 from static.py.ParkingLot import GetSectorsData
 
-bp = Blueprint('frontPage', __name__)
+bp = Blueprint('homePage', __name__)
 
 sector1 = 1
 sector2 = 2
 sector3 = 3
 
 @bp.route('/')
-def home():
+def homePage():
         sector1Data = GetSectorsData(sector1)
         (sector1Id, s1Total, s1AS, s1US) = sector1Data
 
@@ -22,7 +22,7 @@ def home():
         (sector3Id, s3Total, s3AS, s3US) = sector3Data
 
         return render_template(
-                'FrontPage.html',
+                'HomePage.html',
                 title ="Home",
                 sector1Total = s1Total,
                 sector1AS = s1AS, 

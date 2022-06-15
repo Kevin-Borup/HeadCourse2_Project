@@ -4,10 +4,10 @@ from flask import (
 
 from werkzeug.security import check_password_hash
 
-bp = Blueprint('login', __name__)
+bp = Blueprint('loginPage', __name__)
 
 @bp.route('/Login', methods=('GET', 'POST'))
-def login():
+def loginPage():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
