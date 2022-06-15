@@ -20,8 +20,10 @@ while keepRunning:
         # licensePlateExists = ImageManipulation.StartImageProcess()
         licensePlateExists = True
         if licensePlateExists:
+            print("Sending Open")
             s.send("Open".encode('utf-8'))
         else:
+            print("Sending Close")
             s.send("Close".encode('utf-8'))
 
         
