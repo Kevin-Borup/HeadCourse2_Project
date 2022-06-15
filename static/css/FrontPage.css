@@ -16,15 +16,15 @@ https://www.w3schools.com/css/default.asp */
 }
 
 /* Colors for avaible and not available places */
-.available{
+.green {
     color: green ;
 }
 
-.meh{
+.yellow {
     color: orange;
 }
 
-.not_avaible {
+.red {
     color: red;
 }
 
