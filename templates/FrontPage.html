@@ -3,16 +3,16 @@
 
 <link rel="StyleSheet" type="text/css" href="static/css/FrontPage.css">
 
-<div>
+<div class="flex-container">
     <!-- Sector 1 -->
     <div id = "box_left"> 
         <h3>Sector 1</h3>
         <p>Available: 
-            <span class="not_avaible"> 0 </span> 
+            <span class="not_avaible">{{sector1AS}}</span> 
         </p> 
         <!-- try to impliment that the if the amount of places is more than 20% put the green light, if less than 20 then orange.-->
-        <p>Used: 3 </p> 
-        <p>Total: 90 </p> <!-- Somebody will have to count the exact amount of places, and it looks like it'll be me. -->
+        <p>Used: {{sector1US}}</p> 
+        <p>Total: {{sector1Total}}</p> <!-- Somebody will have to count the exact amount of places, and it looks like it'll be me. -->
     </div>
     
     <!-- In the Sector 2 and Sector 3 is how they are used to look, or we can just make black and white if you want.-->
@@ -22,10 +22,10 @@
         <h3>Sector 2</h3>
         <p>
             Available:  
-            <span class="available"> 21 </span>
+            <span class="available">{{sector2AS}}</span>
         </p>
-        <p> Used: 14 </p>
-        <p> Total:  47 </p>
+        <p> Used: {{sector2US}}</p>
+        <p> Total: {{sector2Total}}</p>
     </div>
 
     <!-- Sector 3 -->
@@ -33,21 +33,11 @@
         <h3>Sector 3</h3>
         <p>
             Available:  
-            <span class="meh"> 2 </span>
+            <span class="meh">{{sector3AS}}</span>
         </p>
-        <p> Used: 21 </p>
-        <p> Total: 53 </p>
+        <p> Used: {{sector3US}}</p>
+        <p> Total: {{sector3Total}}</p>
     </div>
 </div>
 
-<br>
-<br>
-
 {% endblock %}
-
-<!-- <div> -->
-    <!-- Test for transfering data from db to html -->
-    <!-- <div>
-        <li>{{data}}</li>
-    </div>
-</div> -->
