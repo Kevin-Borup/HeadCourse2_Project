@@ -34,7 +34,9 @@ async def home():
 
 @app.route('/ParkingLotMap')
 def parkingLotMap():
-        return render_template('ParkingLotMap.html', title="Parking Lot")
+        return render_template(
+                'ParkingLotMap.html',
+                title="Parking Lot")
 
 @app.route('/Profile')
 def profile():
@@ -54,17 +56,12 @@ def profile():
 
 @app.route('/Login')
 def login():
-    return render_template('LoginPage.html', title="Login")
+    return render_template(
+            'LoginPage.html',
+            title="Login")
 
 @app.route('/Register')
 def register():
-    return render_template('RegisterPage.html', title="Register")
-
-def convertTuple(tup: tuple):
-    # initialize an empty string
-    str = ''.join()
-    return str
-
-def replaceSymbols(someString: str):
-        someString.strip(('(),'))
-        return someString
+    return render_template(
+            'RegisterPage.html',
+            title="Register")
