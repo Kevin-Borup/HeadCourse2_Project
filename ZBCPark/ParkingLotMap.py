@@ -5,8 +5,6 @@ from static.py.ParkingLot import AddCarToParkingLot, RemoveCarFromParkingLot
 
 bp = Blueprint('parkingLotMap', __name__)
 
-
-
 @bp.route('/ParkingLotMap')
 def parkingLotMap():
         return render_template(

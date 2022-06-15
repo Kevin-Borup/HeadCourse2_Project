@@ -36,4 +36,4 @@ def register():
 
         flash(error)
 
-    return render_template('register.html', title='Register')
+    return render_template('RegisterPage.html', title='Register')
