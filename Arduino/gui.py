@@ -28,7 +28,8 @@ def ratioCheck(area, width, height):
     ratio = float(width) / float(height)
     if ratio < 1:
         ratio = 1 / ratio
-    if (area < 1063.62 or area > 73862.5) or (ratio < 3 or ratio > 6):
+    if (area < 1063.62 or area > 1000000) or (ratio < 3 or ratio > 6):
+        print("false")
         return False
     return True
 
@@ -86,7 +87,7 @@ def classify(file_path):
             plate_img = img[y:y+h,x:x+w]
             print("Number  identified number plate...")
             res_img[0]=plate_img
-            cv2.imwrite("result.png",plate_img)
+            cv2.imwrite("Arduino\Pictures\License.png",plate_img)
             if(isMaxWhite(plate_img)):
                 clean_plate, rect = clean2_plate(plate_img)
                 
@@ -100,7 +101,7 @@ def classify(file_path):
                     if text:
                         break
     label.configure(foreground='#011638', text=res_text[0]) 
-    uploaded=Image.open("result.png")
+    uploaded=Image.open("Arduino\Pictures\License.png")
     im=ImageTk.PhotoImage(uploaded)
     plate_image.configure(image=im)
     plate_image.image=im
