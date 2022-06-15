@@ -2,6 +2,8 @@ from flask import (
     Blueprint, flash, g, redirect, render_template, request, session, url_for
 )
 
+from static.py.ParkingLot import GetSectorsData
+
 bp = Blueprint('frontPage', __name__)
 
 sector1 = 1

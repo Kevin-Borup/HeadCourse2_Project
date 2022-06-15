@@ -5,6 +5,8 @@ from flask import (
 
 from werkzeug.security import generate_password_hash
 
+from static.py.User import AddUser
+
 bp = Blueprint('register', __name__)
 
 @bp.route('/Register')

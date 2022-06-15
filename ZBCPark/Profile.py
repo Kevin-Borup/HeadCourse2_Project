@@ -1,8 +1,7 @@
 from flask import (
     Blueprint, flash, g, redirect, render_template, request, session, url_for
 )
-from static.py.ParkingLot import GetSectorsData, AddCarToParkingLot, RemoveCarFromParkingLot
-from static.py.User import GetUserData, AddUser
+from static.py.User import GetUserData
 
 bp = Blueprint('profile', __name__)
 
