@@ -4,13 +4,13 @@ function verifyLoginInput(){
     const inputPattern = {email:/^[^\s@]+@[^\s@]+\.[^\s@]+$/, pw:/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s)$/}
 
     login.email = document.getElementById("emailInput").value;
-    let emailFeedback = document.getElementById("emailFeedback")
-
     login.pw = document.getElementById("passwordInput").value;
-    let pwFeedback = document.getElementById("passwordFeedback")
-    
+
     validation.email = false
     validation.pw = false
+
+    let emailFeedback = document.getElementById("emailFeedback")
+    let pwFeedback = document.getElementById("passwordFeedback")
 
     emailFeedback.style.color = 'red'
     if(login.email == ""){
