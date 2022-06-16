@@ -11,7 +11,9 @@ def loginPage():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
+        
         error = None
+
         # db = get_db()
         # user = db.execute(
         #     'SELECT * FROM user WHERE username = ?', (username,)
