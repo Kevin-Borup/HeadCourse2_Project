@@ -2,19 +2,63 @@
 {% block content %}
 <link rel="StyleSheet" type="text/css" href="static/css/ParkingLotPage.css">
 <div class="sectorContainer">
+            <!-- Sector 1 -->
     <div class="splitSectors">
         <h3>Sector 1</h3>
         <img src="static/img/Sector1.png" alt="Sector_1"><br>
-    </div>
+        <div class="nav">
+            <ul>
+                <li>Available:
+                    {% if sector1AS > 60 %}
+                    <span class="green">{{sector1AS}}</span>
+                    {% elif 30 > sector1AS %}
+                    <span class="red">{{sector1AS}}</span>
+                    {% else %}
+                    <span class="yellow">{{sector1AS}}</span>
+                    {% endif %}
+                </li>
+                <li>Used: {{sector1US}}</li>
+                <li>Total: {{sector1Total}}</li>
+        </div>
+    </div> 
     <div class="splitSectors">
+            <!-- Sector 2 -->
         <h3>Sector 2</h3>
         <img src="static/img/Sector2.png" alt="Sector_2"><br>
+        <div class="nav">
+            <ul>
+                <li>Available:
+                    {% if sector2AS > 30 %}
+                    <span class="green">{{sector2AS}}</span>
+                    {% elif 15 > sector2AS %}
+                    <span class="red">{{sector2AS}}</span>
+                    {% else %}
+                    <span class="yellow">{{sector2AS}}</span>
+                    {% endif %}
+                </li>
+            <li> Used: {{sector2US}}</li>
+            <li> Total: {{sector2Total}}</li>
+    </div>
     </div>
 </div>
 <div class="sectorContainer">
+        <!-- Sector 3 -->
     <div id="largeSector" >
         <h3>Sector 3</h3>
         <img src="static/img/Sector3.png" alt="Sector_3"><br>
+        <div class="nav">
+            <ul>
+                <li>Available:
+                    {% if sector3AS > 34 %}
+                    <span class="green">{{sector3AS}}</span>
+                    {% elif 17 > sector3AS %}
+                    <span class="red">{{sector3AS}}</span>
+                    {% else %}
+                    <span class="yellow">{{sector3AS}}</span>
+                    {% endif %}
+                </li>
+            <li> Used: {{sector3US}}</li>
+            <li> Total: {{sector3Total}}</li>
     </div>
 </div>
 {% endblock %}
