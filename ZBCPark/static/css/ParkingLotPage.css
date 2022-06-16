@@ -35,3 +35,16 @@ img {
     width: 90%;
     height: auto;
   }
+
+
+.nav li{
+    font-size: 110%;
+    display:inline;
+    
+}
+
+.nav ul{
+    overflow-x:hidden;
+    white-space:nowrap; 
+    width: 100%;
+}
