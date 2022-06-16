@@ -1,49 +1,46 @@
 function verifyLoginInput(){
-    let validated = false
+    const login = {email, pw};
+    const validation = {email, pw}
+    const inputPattern = {email:/^[^\s@]+@[^\s@]+\.[^\s@]+$/, pw:/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s)$/}
 
-    let emailInput = document.getElementById("emailInput").value;
+    login.email = document.getElementById("emailInput").value;
     let emailFeedback = document.getElementById("emailFeedback")
 
-    let pwInput = document.getElementById("passwordInput").value;
+    login.pw = document.getElementById("passwordInput").value;
     let pwFeedback = document.getElementById("passwordFeedback")
     
-    let emailValidated = false
-    let pwValidated = false
-
-    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    let pwPattern =  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s)$/;
+    validation.email = false
+    validation.pw = false
 
     emailFeedback.style.color = 'red'
-    if(emailInput == ""){
+    if(login.email == ""){
         emailFeedback.innerHTML = "Please fill the email."
-    } else if (emailInput.length < 3) {
+    } else if (login.email.length < 3) {
         emailFeedback.innerHTML = "Your email length must be atleast 3 characters."
-    } else if (emailInput.length > 50) {
+    } else if (login.email.length > 50) {
         emailFeedback.innerHTML = "Your email length must not exceed 50 characters."
-    } else if(!emailInput.match(emailPattern)){
+    } else if(!login.email.match(inputPattern.email)){
         emailFeedback.innerHTML = "Please type a valid email."
     } else {
         emailFeedback.innerHTML = "Email is valid."
         pwFeedback.style.color = 'green'
-        emailValidated = true
+        validation.email = true
     }
 
     pwFeedback.style.color = 'red'
-    if(pwInput == ""){
+    if(login.pw == ""){
         pwFeedback.innerHTML = "Please fill the password."
-    } else if (pwInput.length < 5) {
+    } else if (login.pw.length < 5) {
         pwFeedback.innerHTML = "Your password length must be atleast 5 characters."
-    } else if (pwInput.length > 40) {
+    } else if (login.pw.length > 40) {
         pwFeedback.innerHTML = "Your password length must not exceed 40 characters."
-    } else if(!pwInput.match(pwPattern)){
+    } else if(!login.pw.match(inputPattern.pw)){
         pwFeedback.innerHTML = "Your password must contain at least one lowercase letter, one uppercase letter, one numeric digit, and one special character."
     } else {
         pwFeedback.innerHTML = "Password is valid."
         pwFeedback.style.color = 'green'
-        pwValidated = true
+        validation.pw = true
     }
 
-    validated = emailValidated && pwValidated
-
-    return validated
+    return validation.email && validation.pw
 }
