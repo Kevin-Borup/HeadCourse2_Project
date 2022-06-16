@@ -10,7 +10,7 @@ OpenCV/
 *.so
 
 # Database config
-database.ini
+# database.ini
 
 # Distribution / packaging
 .Python
