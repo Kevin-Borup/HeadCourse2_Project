@@ -16,4 +16,16 @@
     </div>
 </div>
 
+{% if userRole == "Student" %}
+<div style="justify-content:center; align-items:center; display:flex;">
+    <div class="input-field" style="padding:1%;">
+        <input type="text" placeholder="Enter a licenseplate" required>
+    </div>
+    <div class="input-field button" style="padding:1%;">
+        <input type="button" value="Delete">
+    </div>
+</div>
+{% endif %}
+
+
 {% endblock %}
