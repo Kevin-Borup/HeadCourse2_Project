@@ -6,7 +6,7 @@ https://www.w3schools.com/css/default.asp */
     display: flex;
 }
 
-#box_left {
+.sectorBox {
     font-size: 125%;
     border: 1.5% black;
     outline-style: solid;

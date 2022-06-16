@@ -1,11 +1,20 @@
 {% extends "masterpage.html" %}
 {% block content %}
-<link rel="StyleSheet" type="text/css" href="static/css/parkingLotPage.css">
-
-<h3>Sector 1</h3><br>
-<img src="static/img/Sector_1.jpg" alt="Sector_1">
-<h3>Sector 2</h3><br>
-<img src="static/img/Sector_2.jpg" alt="Sector_2">
-<h3>Sector 3</h3><br>
-<img src="static/img/Sector_3.jpg" alt="Sector_3">
+<link rel="StyleSheet" type="text/css" href="static/css/ParkingLotPage.css">
+<div class="sectorContainer">
+    <div class="splitSectors">
+        <h3>Sector 1</h3>
+        <img src="static/img/Sector1.png" alt="Sector_1"><br>
+    </div>
+    <div class="splitSectors">
+        <h3>Sector 2</h3>
+        <img src="static/img/Sector2.png" alt="Sector_2"><br>
+    </div>
+</div>
+<div class="sectorContainer">
+    <div id="largeSector" >
+        <h3>Sector 3</h3>
+        <img src="static/img/Sector3.png" alt="Sector_3"><br>
+    </div>
+</div>
 {% endblock %}

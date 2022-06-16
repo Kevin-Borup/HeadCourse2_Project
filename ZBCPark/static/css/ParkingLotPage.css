@@ -1,9 +1,37 @@
-#boxedmy {
-    font-size: 100%;
-    float: left;
+.sectorContainer{
+    height: 49.5%;
+    width: 95.5%;
+    min-height: 600px;
+    padding-top: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.splitSectors {
+    flex: 1;
+    padding: 0.25%;
+    margin: 0.225%;
+    border: 100% black;
+    outline-style: solid;
+}
+
+#largeSector {
+    min-height: 600px;
+    width: 95.5%;
+    padding: 2%;
+    margin: 1%;
     border: 1% black;
     outline-style: solid;
-    width: 22%;
-    padding: 2%;
-    margin: 3.2%;
 }
+
+h3{
+    display: block;
+}
+
+img {
+    width: 90%;
+    height: auto;
+  }

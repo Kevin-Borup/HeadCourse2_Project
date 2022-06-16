@@ -8,7 +8,7 @@ int pirStat = 0;
 int pirCurrent = 0;
 byte mac[] = {  
   0x00, 0xAA, 0xBB, 0xCC, 0xDE, 0x02 };
-IPAddress otherIp(10, 108, 146, 13);
+IPAddress otherIp(10, 108, 149, 11);
 Servo servo;
   
 unsigned int localPort = 5000; // Assign a port to talk over

@@ -1,22 +1,12 @@
 /* Sorry if some of this will break something, if you want to specify use # and then an id. */
-.column {
-    float: left;
-    padding: 15px;
+.container{
+  justify-content: center; 
+  align-items: center; 
+  display: flex;
 }
 
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
+.profileImg{
+  float: left;
+  width: 10%;
+  height: 10%;
 }
-/* this is a list thingy */
-.menu ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .menu li {
-    padding: 8px;
-    margin-bottom: 8px;
-  }
