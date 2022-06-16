@@ -21,6 +21,7 @@ void setup() {
   pinMode(pirPin, INPUT);
   servo.attach(3);
   Serial.begin(9600);
+  servo.write(0);
   if (Ethernet.begin(mac) == 0) {
     Serial.println("Failed to configure Ethernet using DHCP");
   }
