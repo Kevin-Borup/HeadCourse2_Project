@@ -1,33 +1,33 @@
-const adminButton = document.getElementById("#adminButton")
-adminButton.style.visibility = "visible";
-var nameList = [];
-function getAllUsers(){
-    $.ajax({
-        type: "GET",
-        url: "static/py/AdminData.py",
-        data: { param: userList},
-        success: listAllUsers
-    })
-}
+// const adminButton = document.getElementById("#adminButton")
+// adminButton.style.visibility = "visible";
+// var nameList = [];
+// function getAllUsers(){
+//     $.ajax({
+//         type: "GET",
+//         url: "static/py/AdminData.py",
+//         data: { param: userList},
+//         success: listAllUsers
+//     })
+// }
 
-function listAllUsers(userList){
-    if(response != null){
-        nameList = userList;
-    }
-    else{
-        alert("No users found");
-    }
-}
+// function listAllUsers(userList){
+//     if(response != null){
+//         nameList = userList;
+//     }
+//     else{
+//         alert("No users found");
+//     }
+// }
 
-function createlist(){
-    var list = document.createElement("ul");
-    for (let i of nameList) {
-        let item = document.createElement("li");
-        item.innerHTML = i;
-        list.appendChild(item);
-      }
-      document.getElementById("adminContent").appendChild(list);
-}
+// function createlist(){
+//     var list = document.createElement("ul");
+//     for (let i of nameList) {
+//         let item = document.createElement("li");
+//         item.innerHTML = i;
+//         list.appendChild(item);
+//       }
+//       document.getElementById("adminContent").appendChild(list);
+// }
 
 function checkLogin() {
 
@@ -45,7 +45,7 @@ function checkLogin() {
 function callbackFunction(response) {
     if(response != null) {
         document.cookie = response // userId
-        window.location.href = "/ProfilePage";
+        window.location.href = "/Profile";
     }
     else {
         alert("Wrong email or password")
