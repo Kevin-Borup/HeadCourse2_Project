@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+#emailFeedback {
+    color: red;
+}
+
+#passwordFeedback {
+    color: red;
+}
+
 .container{
     display: block;
     margin-left: auto;
