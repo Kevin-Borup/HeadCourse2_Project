@@ -13,25 +13,25 @@ class Creditcard:
         self.__cardCode = cardCode
         self.__expDate = expDate
 
-async def AddCreditcard(userCardnumber, name, cvc, expiryDate):
+def AddCreditcard(userCardnumber, name, cvc, expiryDate):
 
         conn = None
 
         createdCreditcard = None
 
         try:
-                params = await config()
-                conn = await psycopg2.connect(**params)
-                cur = await conn.cursor()
-                await cur.execute('CALL addcreditcard(%s,%s,%s,%s)', userCardnumber, name, cvc, expiryDate)
-                await cur.execute('SELECT * FROM public.creditcard WHERE cardnumber = {userCardnumber}')
-                createdCreditcard = await cur.fetchone() # Fetches a single row from the database
-                await cur.close()
+                params = config()
+                conn = psycopg2.connect(**params)
+                cur = conn.cursor()
+                cur.execute('CALL public.addcreditcard(%s,%s,%s,%s)', userCardnumber, name, cvc, expiryDate)
+                cur.execute('SELECT * FROM public.creditcard WHERE cardnumber = {userCardnumber}')
+                createdCreditcard = cur.fetchone() # Fetches a single row from the database
+                cur.close()
 
         except (Exception, psycopg2.DatabaseError) as error:
                 print(error)
 
         finally:
                 if conn is not None:
-                        await conn.close()
+                        conn.close()
                 return createdCreditcard

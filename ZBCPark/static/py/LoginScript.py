@@ -11,7 +11,7 @@ def CheckLoginData(email, password):
         params = config()
         conn = psycopg2.connect(**params)
         cur = conn.cursor()
-        cur.execute('CALL checklogin(%s,%s)', email, password)
+        cur.execute('CALL public.checklogin(%s,%s)', email, password)
         userId = cur.fetchone() # Fetches a single row from the database
         cur.close()
 

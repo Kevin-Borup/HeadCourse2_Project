@@ -23,7 +23,7 @@ async def AddUser(accName, accRole, accLicenseplate, accCardnumber):
                 params = await config()
                 conn = await psycopg2.connect(**params)
                 cur = await conn.cursor()
-                await cur.execute('CALL createaccount(%s,%s,%s,%s)', accName, accRole, accLicenseplate, accCardnumber)
+                await cur.execute('CALL public.createaccount(%s,%s,%s,%s)', accName, accRole, accLicenseplate, accCardnumber)
                 await cur.execute('SELECT * FROM public.user_account WHERE cardnumber = {}'.format(accCardnumber))
                 createdUser = await cur.fetchone() # Fetches a single row from the database
                 await cur.close()
