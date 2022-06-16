@@ -1,13 +1,10 @@
 function verifyLoginInput(){
-    const login = {email, pw};
-    const validation = {email, pw}
+    const login = {email:"", pw:""};
+    const validation = {email:false, pw:false}
     const inputPattern = {email:/^[^\s@]+@[^\s@]+\.[^\s@]+$/, pw:/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s)$/}
 
     login.email = document.getElementById("emailInput").value;
     login.pw = document.getElementById("passwordInput").value;
-
-    validation.email = false
-    validation.pw = false
 
     let emailFeedback = document.getElementById("emailFeedback")
     let pwFeedback = document.getElementById("passwordFeedback")
@@ -23,7 +20,7 @@ function verifyLoginInput(){
         emailFeedback.innerHTML = "Please type a valid email."
     } else {
         emailFeedback.innerHTML = "Email is valid."
-        pwFeedback.style.color = 'green'
+        emailFeedback.style.color = 'green'
         validation.email = true
     }
 
