@@ -1,7 +1,7 @@
 function verifyLoginInput(){
     const login = {email:"", pw:""};
     const validation = {email:false, pw:false}
-    const inputPattern = {email:/^[^\s@]+@[^\s@]+\.[^\s@]+$/, pw:/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s)$/}
+    const inputPattern = {email:/^[^\s@]+@[^\s@]+\.[^\s@]+$/, pw:/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/}
 
     login.email = document.getElementById("emailInput").value;
     login.pw = document.getElementById("passwordInput").value;
