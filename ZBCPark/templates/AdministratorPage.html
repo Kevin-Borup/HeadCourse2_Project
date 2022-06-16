@@ -1,11 +1,20 @@
 {% extends "masterpage.html" %}
 {% block content %}
-<div id="adminContent">
+<div style="justify-content:center; align-items:center; display:flex;">
+    <div class="input-field" style="padding:1%;">
+        <input type="text" placeholder="Enter a licenseplate" required>
+    </div>
+    <div class="input-field button" style="padding:1%;">
+        <input type="button" value="Delete">
+    </div>
+</div>
 {% for item in adminData %}
+<div id="adminContent" style="text-align:center;">
     <li>
         {{adminData}}
     </li>
 </div>
-
-{% block scripts %}<script src="static/js/adminPage.js"></script>{% endblock %}
+{% endfor %}
+{% block scripts %}
+<script src="static/js/adminPage.js"></script>{% endblock %}
 {% endblock %}
