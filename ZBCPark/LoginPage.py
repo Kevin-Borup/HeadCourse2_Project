@@ -8,28 +8,30 @@ bp = Blueprint('loginPage', __name__)
 
 @bp.route('/Login', methods=('GET', 'POST'))
 def loginPage():
-    if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
+    # if request.method == 'POST':
+    #     print("post")
+    #     username = request.form['username']
+    #     password = request.form['password']
         
-        error = None
 
-        # db = get_db()
-        # user = db.execute(
-        #     'SELECT * FROM user WHERE username = ?', (username,)
-        # ).fetchone()
+    #     error = None
 
-        # if user is None:
-        #     error = 'Incorrect username.'
-        # elif not check_password_hash(user['password'], password):
-        #     error = 'Incorrect password.'
+    #     db = get_db()
+    #     user = db.execute(
+    #         'SELECT * FROM user WHERE username = ?', (username, password)
+    #     ).fetchone()
+
+    #     if user is None:
+    #         error = 'Incorrect username.'
+    #     elif not check_password_hash(user['password'], password):
+    #         error = 'Incorrect password.'
         
-        # if error is None:
-        #     session.clear()
-        #     session['user_id'] = user[id]
-        #     return redirect(url_for('profile'))
+    #     if error is None:
+    #         session.clear()
+    #         session['user_id'] = user[id]
+    #         return redirect(url_for('profile'))
 
-        flash(error)
+    #     flash(error)
 
     return render_template('LoginPage.html', title="Login")
 
