@@ -12,7 +12,7 @@ def profilePage():
     #return 'You are not logged in'
     randomId = 1
     userData = GetUserData(randomId)
-    (id, name, role, licenseplate, cardnumber) = userData
+    (id, name, role, licenseplate) = userData
 
     return render_template(
         'ProfilePage.html',
@@ -20,5 +20,4 @@ def profilePage():
         userId = id,
         userName = name,
         userRole = role,
-        userLicenseplate = licenseplate,
-        userCardnumber = cardnumber)
+        userLicenseplate = licenseplate)
