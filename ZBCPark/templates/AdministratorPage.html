@@ -1,7 +1,10 @@
 {% extends "masterpage.html" %}
 {% block content %}
 <div id="adminContent">
-    
+{% for item in adminData %}
+    <li>
+        {{adminData}}
+    </li>
 </div>
 
 {% block scripts %}<script src="static/js/adminPage.js"></script>{% endblock %}
