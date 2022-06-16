@@ -1,3 +1,9 @@
+function submitEnter(e){
+    if(e && e.keyCode == 13){
+        verifyLoginInput();
+    }
+}
+
 function verifyLoginInput(){
     const login = {email:"", pw:""};
     const validation = {email:false, pw:false}
@@ -31,7 +37,7 @@ function verifyLoginInput(){
         pwFeedback.innerHTML = "Your password length must be atleast 5 characters."
     } else if (login.pw.length > 40) {
         pwFeedback.innerHTML = "Your password length must not exceed 40 characters."
-    } else if(login.pw.match(inputPattern.pw)){
+    } else if(!login.pw.match(inputPattern.pw)){
         pwFeedback.innerHTML = "Your password must contain at least one lowercase letter, one uppercase letter, one numeric digit, and one special character."
     } else {
         pwFeedback.innerHTML = "Password is valid."
