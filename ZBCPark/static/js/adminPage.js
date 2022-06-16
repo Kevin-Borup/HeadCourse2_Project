@@ -1,5 +1,33 @@
 const adminButton = document.getElementById("#adminButton")
 adminButton.style.visibility = "visible";
+var nameList = [];
+function getAllUsers(){
+    $.ajax({
+        type: "GET",
+        url: "static/py/AdminData.py",
+        data: { param: userList},
+        success: listAllUsers
+    })
+}
+
+function listAllUsers(userList){
+    if(response != null){
+        nameList = userList;
+    }
+    else{
+        alert("No users found");
+    }
+}
+
+function createlist(){
+    var list = document.createElement("ul");
+    for (let i of nameList) {
+        let item = document.createElement("li");
+        item.innerHTML = i;
+        list.appendChild(item);
+      }
+      document.getElementById("adminContent").appendChild(list);
+}
 
 function checkLogin() {
 
