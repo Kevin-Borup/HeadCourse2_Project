@@ -21,4 +21,6 @@ def CheckLoginData(email, password):
     finally:
         if conn is not None:
             conn.close()
-        return userId
+        
+        user = {"userId":userId}
+        return user
