@@ -1,10 +1,12 @@
 {% extends "masterpage.html" %}
 {% block content %}
 
-<div style="justify-content:center; align-items:center; display:flex;">
-    <img src="static/img/user_photo.jpg" alt="aphoto_ofuser" style="float:left;width:10%;height:10%;">
-    <div class="clearfix">
-        <div class="column menu">
+<link rel="StyleSheet" type="text/css" href="static/css/ProfilePage.css">
+
+<div class="container">
+    <img class="profileImg" src="static/img/user_photo.jpg" alt="aphoto_ofuser">
+    <div>
+        <div>
             <br>
             <ul>
                 Name: {{userName}}<br>
