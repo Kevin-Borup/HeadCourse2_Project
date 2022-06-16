@@ -11,8 +11,8 @@ def getAdminData():
         params = config()
         conn = psycopg2.connect(**params)
         cur = conn.cursor()
-        cur.execute('SELECT name, licenseplate FROM public.user_account')
-        adminData = cur.fetchone() # Fetches a single row from the database
+        cur.execute('SELECT name FROM public.user_account')
+        adminData = cur.fetchall() # Fetches all rows from the database that matches the condition
         cur.close()
 
     except (Exception, psycopg2.DatabaseError) as error:
