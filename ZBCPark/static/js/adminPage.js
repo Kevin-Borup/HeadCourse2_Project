@@ -8,7 +8,7 @@ function checkLogin() {
 
     $.ajax({
         type: "GET",
-        url: "",
+        url: "static/py/LoginScript.py",
         data: { param: email, password },
         success: callbackFunction
     })

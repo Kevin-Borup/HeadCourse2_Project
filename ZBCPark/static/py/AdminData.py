@@ -1,18 +1,18 @@
 from static.py.dbConfig import config
 import psycopg2
 
-def CheckLoginData(email, password):
-        
+def getAdminData():
+            
     conn = None
 
-    userId = None
+    adminData = None
 
     try:
         params = config()
         conn = psycopg2.connect(**params)
         cur = conn.cursor()
-        cur.execute('CALL checklogin(%s,%s)', email, password)
-        userId = cur.fetchone() # Fetches a single row from the database
+        cur.execute('SELECT name, licenseplate FROM public.user_account')
+        adminData = cur.fetchone() # Fetches a single row from the database
         cur.close()
 
     except (Exception, psycopg2.DatabaseError) as error:
@@ -21,4 +21,4 @@ def CheckLoginData(email, password):
     finally:
         if conn is not None:
             conn.close()
-        return userId
+        return adminData
