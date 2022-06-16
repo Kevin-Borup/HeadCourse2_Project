@@ -15,19 +15,16 @@ while keepRunning:
     data, address = s.recvfrom(1024)
     sentValue = data.decode('utf-8')
     print("Arduino Sent: ", sentValue)
-    if sentValue == 1:
+    if sentValue == '1':
         # CameraControl.TakePicture()
         # licensePlateExists = ImageManipulation.StartImageProcess()
         licensePlateExists = True
         if licensePlateExists:
             print("Sending Open")
-            s.send("Open".encode('utf-8'))
+            s.sendto("Open".encode('utf-8'), address)
         else:
             print("Sending Close")
-            s.send("Close".encode('utf-8'))
-
-        
-    
+            s.sendto("Close".encode('utf-8'), address)
 
 # close the socket
 s.close()
