@@ -14,11 +14,17 @@ function checkLogin() {
 function callbackFunction(response) {
     if(response != null) {
         document.cookie = response // userId
+        console.log(document.cookie.toString())
         window.location.href = "/Profile";
     }
     else {
         alert("Wrong email or password")
     }
+}
+
+function getUserAttachedToLicenseplate {
+    const name = document.querySelector("nameAndLicenseplate")
+    
 }
 
 // const adminButton = document.getElementById("#adminButton")
