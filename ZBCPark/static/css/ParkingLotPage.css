@@ -48,3 +48,16 @@ img {
     white-space:nowrap; 
     width: 100%;
 }
+
+/* Colors for avaible and not available places */
+.green {
+    color: green ;
+}
+
+.yellow {
+    color: orange;
+}
+
+.red {
+    color: red;
+}

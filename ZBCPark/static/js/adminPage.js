@@ -22,12 +22,12 @@ function callbackFunction(response) {
     }
 }
 
-function getUserAttachedToLicenseplate {
+function getUserAttachedToLicenseplate() {
     const name = document.querySelector("nameAndLicenseplate")
     
 }
 
-function loadUserProfileTemplate {
+function loadUserProfileTemplate() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
