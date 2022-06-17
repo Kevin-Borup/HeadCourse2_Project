@@ -1,9 +1,7 @@
 from static.py.Login import CheckLogin
 from flask import (
-    Blueprint, flash, g, redirect, render_template, request, session, url_for
+    Blueprint, flash, redirect, render_template, request, session, url_for
 )
-
-from werkzeug.security import check_password_hash
 
 bp = Blueprint('loginPage', __name__)
 

@@ -10,11 +10,11 @@
 </div>
 {% for name in adminData %}
 <div id="nameAndLicenseplate" style="text-align:center; margin-bottom: 0.5%;">
-    <li id="userList">
+    <li id="userList" data-uname="UN-{{name}}">
         {{name}}
     </li>
     <div style="text-align:center; margin-bottom:2%;">
-        <button type="button" onclick="loadUserProfileTemplate()">Get Profile Template</button>
+        <button type="button" onclick="loadUserProfileTemplate(this)">Get Profile Template</button>
         <div id="UserTemplateShowcase">
             <span id="name"></span>
             <span id="licenseplate"></span>

@@ -32,7 +32,7 @@ def getUserData(uName):
         params = config()
         conn = psycopg2.connect(**params)
         cur = conn.cursor()
-        cur.execute('SELECT name, licenseplate, role FROM public.user_account WHERE name = {0}'.format(uName))
+        cur.execute("SELECT name, licenseplate, role FROM public.user_account WHERE name = '{0}'".format(uName))
         userData = cur.fetchone() # Fetches all rows from the database that matches the condition
         cur.close()
 
