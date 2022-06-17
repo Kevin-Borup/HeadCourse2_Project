@@ -10,44 +10,54 @@
 
         <form action="#">
             <div class="input-field">
-                <input type="text" placeholder="Enter your first name" required>
+                <input id="firstName" type="text" placeholder="Enter your first name" required>
             </div>
+            <span id="firstNameFeedback"></span>
             <div class="input-field">
-                <input type="text" placeholder="Enter your last name" required>
+                <input id="lastName" type="text" placeholder="Enter your last name" required>
             </div>
+            <span id="lastNameFeedback"></span>
             <div class="input-field">
-                <input type="email" placeholder="Enter your email" required>
+                <input id="email" type="email" placeholder="Enter your email" required>
             </div>
+            <span id="emailFeedback"></span>
             <div class="input-field">
-                <input type="text" placeholder="Enter your license plate" required>
+                <input id="licensePlate" type="text" placeholder="Enter your license plate" required>
             </div>
+            <span id="licensePlateFeedback"></span>
             <div class="input-field">
-                <input type="password" class="password" placeholder="Create a password" required>
+                <input id="pw1" type="password" class="password" placeholder="Create a password" required>
             </div>
+            <span id="pw1Feedback"></span>
             <div class="input-field">
-                <input type="password" class="password" placeholder="Confirm a password" required>
+                <input id="pw2" type="password" class="password" placeholder="Confirm a password" required>
             </div>
+            <span id="pw2Feedback"></span>
             <div class="input-field">
-                <input type="text" placeholder="Enter a cardnumber" required>
+                <input id="cardNumber" type="text" placeholder="Enter a cardnumber" required>
             </div>
+            <span id="cardNumberFeedback"></span>
             <div class="input-field">
-                <input type="text" placeholder="Enter cardholder's name" required>
+                <input id="cardName" type="text" placeholder="Enter cardholder's name" required>
             </div>
+            <span id="cardNameFeedback"></span>
             <div class="input-field">
-                <input type="text" placeholder="Enter CVC" required>
+                <input id="cardCode" type="text" placeholder="Enter CVC" required>
             </div>
+            <span id="cardCodeFeedback"></span>
             <div class="input-field">
-                <input type="month" placeholder="Enter expiration date" required>
+                <input id="cardDate" type="month" placeholder="Enter expiration date" required>
             </div>
+            <span id="cardDateFeedback"></span>
             <div class="input-field button">
-                <input type="button" value="Register">
+                <input type="button" value="Register" onclick="verifyRegistrationInput()">
             </div>
         </form>
     </div>
 </div>
 
     {% block scripts %}
-    <script src="static/js/loginInputValidation.js"></script>
+    <script src="static/js/registrationInputValidation.js"></script>
 
     {% endblock %}
 {% endblock %}
