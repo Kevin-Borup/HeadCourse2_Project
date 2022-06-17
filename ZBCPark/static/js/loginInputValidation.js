@@ -32,7 +32,5 @@ function verifyLoginInput(){
         validation.pw = true
     }
 
-    if (validation.email && validation.pw) {
-        document.forms[0].submit()
-    }
+    return validation.email && validation.pw
 }
