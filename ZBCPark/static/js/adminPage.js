@@ -28,14 +28,28 @@ function getUserAttachedToLicenseplate() {
 }
 
 function loadUserProfileTemplate() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("UserTemplateShowcase").innerHTML = this.responseText;
-      }
-    };
-    xhttp.open("GET", "static/txt/ProfileTemplate.txt", true);
-    xhttp.send();
+    // var xhttp = new XMLHttpRequest();
+    // xhttp.onreadystatechange = function() {
+    //   if (this.readyState == 4 && this.status == 200) {
+    //     document.getElementById("UserTemplateShowcase").innerHTML = this.responseText;
+    //   }
+    // };
+    // xhttp.open("GET", "static/txt/ProfileTemplate.txt", true);
+    // xhttp.send();
+
+    uName = 
+
+    $.ajax({
+        data: {
+            userName : uName,
+        },
+        type : 'POST',
+        url : '/GetUser'
+    }).success(function(data) {
+        document.getElementById('name').innerHTML = data.name
+        document.getElementById('licenseplate').innerHTML = data.licenseplate
+        document.getElementById('role').innerHTML = data.role
+    });
 }
 
 // const adminButton = document.getElementById("#adminButton")

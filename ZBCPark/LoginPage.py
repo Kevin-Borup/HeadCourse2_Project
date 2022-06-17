@@ -5,10 +5,10 @@ from flask import (
 
 from werkzeug.security import check_password_hash
 
-bp = Blueprint('login', __name__)
+bp = Blueprint('loginPage', __name__)
 
-@bp.route('/Confirm/Login', methods=('GET', 'POST'))
-def login():
+@bp.route('/Login', methods=['GET', 'POST'])
+def loginPage():
     if request.method == 'POST':
         username = request.form['email']
         password = request.form['password']
@@ -21,13 +21,11 @@ def login():
             error = 'Incorrect username or password.'
         
         if error is None:
-            session.clear()
-            session['user_id'] = user[id]
-            return redirect(url_for('profile'))
+            return redirect(url_for('profilePage.profilePage'))
 
         flash(error)
 
-    return render_template('Profile.html', title="Login")
+    return render_template('LoginPage.html', title="Login")
 
 
 def logout():
