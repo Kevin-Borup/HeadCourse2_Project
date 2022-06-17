@@ -9,27 +9,30 @@
         <div class="form login">
             <span class="title">Login</span>
 
-            <form onkeypress="submitEnter(event)">
+            <form action="/Confirm/Login" method="POST">
                 <div class="input-field">
                     <input id="emailInput" type="text" placeholder="Enter your email" required>
                 </div>
                 <span id="emailFeedback"></span>
 
                 <div class="input-field">
-                    <input id="passwordInput" type="password" class="password" placeholder="Enter your password" required>
+                    <input id="passwordInput" type="password" class="password" placeholder="Enter your password"
+                        required>
                 </div>
                 <span id="passwordFeedback"></span>
 
                 <div class="input-field button">
-                    <input type="button" value="Login" onclick="verifyLoginInput()">
+                    <input type="submit" value="Login" onclick="verifyLoginInput()">
                 </div>
             </form>
         </div>
     </div>
 </div>
 
-    {% block scripts %}
-    <script src="static/js/adminPage.js"></script>
-    <script src="static/js/loginInputValidation.js"></script>
-    {% endblock %}
+
+
+{% block scripts %}
+<script src="static/js/adminPage.js"></script>
+<script src="static/js/loginInputValidation.js"></script>
+{% endblock %}
 {% endblock %}
